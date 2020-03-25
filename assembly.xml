@@ -12,6 +12,7 @@
             <includes>
                 <include>application.properties</include>
                 <include>application-test.properties</include>
+                <include>futures.yml</include>
                 <include>application-provided.properties</include>
             </includes>
             <fileMode>0755</fileMode>
@@ -54,23 +55,29 @@
             <lineEnding>unix</lineEnding>
             <includes>
                 <include>*.sh</include>
+                <include>*.bat</include>
             </includes>
             <fileMode>0755</fileMode>
             <directoryMode>0777</directoryMode>
         </fileSet>
 
 
-        <!--拷贝前一插件打包后的all-in-one的jar文件-->
-        <fileSet>
-            <directory>${project.basedir}/target/</directory>
-            <outputDirectory>./lib</outputDirectory>
-            <includes>
-                <include>${project.artifactId}-${project.version}.jar</include>
-            </includes>
-            <fileMode>0755</fileMode>
-            <directoryMode>0777</directoryMode>
-        </fileSet>
-
+<!--        &lt;!&ndash;拷贝前一插件打包后的all-in-one的jar文件&ndash;&gt;-->
+<!--        <fileSet>-->
+<!--            <directory>${project.basedir}/target/</directory>-->
+<!--            <outputDirectory>./lib</outputDirectory>-->
+<!--            <includes>-->
+<!--                <include>${project.artifactId}-${project.version}.jar</include>-->
+<!--            </includes>-->
+<!--            <fileMode>0755</fileMode>-->
+<!--            <directoryMode>0777</directoryMode>-->
+<!--        </fileSet>-->
     </fileSets>
-
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>./lib</outputDirectory>
+            <useProjectArtifact>true</useProjectArtifact>
+            <scope>runtime</scope>
+        </dependencySet>
+    </dependencySets>
 </assembly>
