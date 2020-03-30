@@ -45,17 +45,14 @@ public class FutureContractTable {
                     log.info("-----> {}\r", symbol);
                     int month = getStartContractMonth();
                     int year = getStartContractYear();
-                    String futureContract = generateSymbol(year, month, code, securityExchange);
-                    log.info("{}", futureContract);
-                    symbols.add(futureContract);
-                    for(int i = 1; i <= 11; i++) {
+                    for(int i = 1; i <= 12; i++) {
                         if(month == 12) {
                             year += 1;
                             month = 1;
                         } else {
                             month += 1;
                         }
-                        futureContract = generateSymbol(year, month, code, securityExchange);
+                        String futureContract = generateSymbol(year, month, code, securityExchange);
                         log.info("{}", futureContract);
                         symbols.add(futureContract);
                     }
