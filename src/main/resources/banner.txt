@@ -16,4 +16,4 @@ ${AnsiColor.BLUE}
 . ######::::: ##:::: ##::::::::
 :......::::::..:::::..:::::::::
 ${AnsiColor.BRIGHT_YELLOW} :: Spring Boot ::${AnsiColor.BLACK}        ${spring-boot.formatted-version}
-${AnsiColor.BRIGHT_YELLOW} :: Provider :: ${AnsiColor.CYAN} http://www.kafangtech.com
+${AnsiColor.BRIGHT_YELLOW} :: Provider :: ${AnsiColor.CYAN} https://github.com/sunxuejian
